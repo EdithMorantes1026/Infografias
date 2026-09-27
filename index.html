@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ecología de los medios y convergencia mediática · Infografía</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f1e7; --card:#fffdf8; --ink:#1d2b2e; --muted:#5f6f6c; --line:#e2d9c8;
+  --eco:#0f8a74; --eco-bg:#e3f1ec; --con:#c77a12; --con-bg:#f8ecd9; --red:#c2412d; --red-bg:#f6e2dc;
+  --serif:'Fraunces',Georgia,serif; --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--paper);color:var(--ink);font-family:var(--sans)}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+#viewport{position:fixed;inset:0;display:grid;place-items:center;overflow:hidden}
+#stage{position:relative;width:1600px;height:900px;flex:none;padding:40px 56px 0}
+
+/* entrada */
+.in{opacity:0;transform:translateY(16px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0s)}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* cabecera */
+header{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--ink);padding-bottom:14px}
+h1{font-family:var(--serif);font-weight:600;font-size:46px;line-height:1.05;margin:0;letter-spacing:-.01em}
+h1 .e{color:var(--eco)} h1 .c{color:var(--con)}
+.meta{font-size:15px;color:var(--muted);margin-top:8px}
+.who{text-align:right;font-size:15px;color:var(--muted);line-height:1.5}
+.who b{color:var(--ink);font-weight:600;font-size:17px}
+
+/* rejilla principal */
+.grid{display:grid;grid-template-columns:1fr 460px 1fr;gap:22px;margin-top:20px;height:452px}
+.block{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 26px;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.block:hover{transform:translateY(-4px);box-shadow:0 14px 30px -18px rgba(29,43,46,.35)}
+.block:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.num{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.num i{font-style:normal;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;color:#fff;font-size:14px;letter-spacing:0}
+.b-eco{border-top:6px solid var(--eco)} .b-eco .num{color:var(--eco)} .b-eco .num i{background:var(--eco)}
+.b-con{border-top:6px solid var(--con)} .b-con .num{color:var(--con)} .b-con .num i{background:var(--con)}
+.b-art{border-top:6px solid var(--ink)} .b-art .num i{background:var(--ink)}
+h2{font-family:var(--serif);font-weight:600;font-size:31px;margin:8px 0 10px;line-height:1.1}
+.quote{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.3;margin:0 0 4px}
+.cite{font-size:12.5px;color:var(--muted)}
+ul{margin:12px 0 0;padding:0;list-style:none}
+li{position:relative;padding-left:20px;font-size:16.5px;line-height:1.42;margin-bottom:9px}
+li::before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:50%}
+.b-eco li::before{background:var(--eco)} .b-con li::before{background:var(--con)}
+li b{font-weight:600}
+.foot{margin-top:auto;padding-top:10px;border-top:1px dashed var(--line);font-size:14px;color:var(--muted)}
+.more{position:absolute;right:18px;top:18px;font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:3px 10px;transition:all .2s}
+.block:hover .more{border-color:var(--ink);color:var(--ink)}
+.chips{display:flex;gap:8px;margin:2px 0 4px}
+.chips span{flex:1;text-align:center;background:var(--con-bg);color:#8a520a;border-radius:10px;padding:8px 6px;font-size:14.5px;font-weight:600;line-height:1.2}
+.chips span small{display:block;font-weight:400;font-size:12.5px;color:#8a520a}
+
+/* articulación */
+#venn{width:100%;height:170px;display:block;margin:-2px 0 2px}
+.vl,.vr{animation:slideL 1.2s .5s cubic-bezier(.2,.7,.2,1) both}
+.vr{animation-name:slideR}
+@keyframes slideL{from{transform:translateX(-50px)}to{transform:none}}
+@keyframes slideR{from{transform:translateX(50px)}to{transform:none}}
+.pts{list-style:none;margin:6px 0 0;padding:0;counter-reset:p}
+.pts li{padding-left:36px;font-size:16px;margin-bottom:8px}
+.pts li::before{counter-increment:p;content:counter(p);background:var(--ink);color:#fff;width:24px;height:24px;top:0;display:grid;place-items:center;font-size:13px;font-weight:600}
+.tension{margin-top:auto;display:flex;justify-content:center;gap:10px;align-items:center;font-size:14.5px;background:var(--red-bg);border-radius:10px;padding:9px 10px}
+.tension .l{color:var(--eco);font-weight:600}.tension .r{color:var(--con);font-weight:600}.tension .a{color:var(--red);font-weight:700}
+
+/* impacto */
+.band{margin-top:22px}
+.band-h{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.band-h h2{margin:0;font-size:27px}
+.band-h .num i{background:var(--red)} .band-h .num{color:var(--red)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{display:flex;flex-direction:column;justify-content:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;transition:transform .25s,box-shadow .25s;position:relative}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px -18px rgba(29,43,46,.35)}
+.card h3{font-family:var(--serif);font-weight:600;font-size:21px;margin:0 0 6px;display:flex;align-items:center;gap:10px}
+.card h3 svg{width:28px;height:28px;flex:none}
+.card p{margin:0;font-size:15px;line-height:1.42}
+.card.crit{background:var(--red-bg);border-color:#ecc7bd}
+
+/* pie */
+footer{position:absolute;left:56px;right:56px;bottom:18px;display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--muted)}
+footer button{border:1px solid var(--ink);border-radius:99px;padding:7px 16px;font-weight:500;color:var(--ink);transition:all .2s}
+footer button:hover{background:var(--ink);color:var(--paper)}
+
+/* ventana de detalle */
+#ov{position:absolute;inset:0;background:rgba(29,43,46,.45);display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:5}
+#ov.show{opacity:1;visibility:visible}
+#box{width:920px;max-height:760px;overflow:auto;background:var(--card);border-radius:22px;padding:38px 46px;transform:translateY(20px) scale(.98);transition:transform .35s cubic-bezier(.2,.7,.2,1);border-top:8px solid var(--ink);position:relative}
+#ov.show #box{transform:none}
+#box h2{font-size:38px;margin:6px 0 16px}
+#box p{font-size:19px;line-height:1.55;margin:0 0 14px}
+#box .cite{font-size:14px}
+#box .refs p{padding-left:36px;text-indent:-36px;font-size:17px}
+#box a{color:var(--eco);word-break:break-all}
+#x{position:absolute;right:22px;top:20px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);text-align:center;font-size:20px}
+#x:hover{border-color:var(--ink)}
+
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.in{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="viewport"><main id="stage">
+
+<header class="in">
+  <div>
+    <h1><span class="e">Ecología de los medios</span> y <span class="c">convergencia mediática</span></h1>
+    <div class="meta">Tarea 2 · Enfoques Contemporáneos de la Comunicación (404417086) · UNAD – ECSAH · Toca cada bloque para ver más</div>
+  </div>
+  <div class="who"><b>Edith Zoraida Morantes Galvis</b><br>Septiembre de 2026</div>
+</header>
+
+<section class="grid">
+  <!-- 1 · Ecología -->
+  <button class="block b-eco in" style="--d:.15s" data-k="eco">
+    <span class="more">ver más</span>
+    <span class="num"><i>1</i> Primer enfoque</span>
+    <h2>Ecología de los medios</h2>
+    <p class="quote">«El estudio de los medios como ambientes».</p>
+    <span class="cite">Postman, en Scolari (2015, p. 19)</span>
+    <ul>
+      <li><b>Medios como ambientes:</b> nos rodean y moldean cómo percibimos y pensamos (p. 29).</li>
+      <li><b>Medios como especies:</b> conviven, compiten y se transforman entre sí (p. 30).</li>
+      <li><b>Cambio ecológico:</b> un medio nuevo no suma, lo cambia todo. Tras la imprenta hubo otra Europa (p. 24).</li>
+    </ul>
+    <div class="foot">Autores clave: Mumford · Innis · McLuhan · Postman · Ong</div>
+  </button>
+
+  <!-- 3 · Articulación -->
+  <button class="block b-art in" style="--d:.45s" data-k="art">
+    <span class="more">ver más</span>
+    <span class="num"><i>3</i> Articulación</span>
+    <h2>¿Cómo se relacionan?</h2>
+    <svg id="venn" viewBox="0 0 420 170" aria-hidden="true">
+      <g class="vl"><circle cx="160" cy="85" r="80" fill="rgba(15,138,116,.14)" stroke="#0f8a74" stroke-width="2"/></g>
+      <g class="vr"><circle cx="260" cy="85" r="80" fill="rgba(199,122,18,.14)" stroke="#c77a12" stroke-width="2"/></g>
+      <text x="120" y="82" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="14" font-weight="600" fill="#0f8a74">Ecología</text>
+      <text x="120" y="100" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="11.5" fill="#5f6f6c">el ecosistema</text>
+      <text x="296" y="82" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="13" font-weight="600" fill="#c77a12">Convergencia</text>
+      <text x="296" y="100" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="11.5" fill="#5f6f6c">los flujos</text>
+      <text x="210" y="91" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="22" fill="#1d2b2e">+</text>
+    </svg>
+    <ul class="pts">
+      <li>Los medios no mueren: se reacomodan y coexisten.</li>
+      <li>El medio es tecnología y también cultura.</li>
+      <li>Uno dibuja el mapa; el otro explica el movimiento.</li>
+    </ul>
+    <div class="tension"><span class="l">El medio nos moldea</span><span class="a">⇄</span><span class="r">Las personas lo mueven</span></div>
+  </button>
+
+  <!-- 2 · Convergencia -->
+  <button class="block b-con in" style="--d:.3s" data-k="con">
+    <span class="more">ver más</span>
+    <span class="num"><i>2</i> Segundo enfoque</span>
+    <h2>Convergencia mediática</h2>
+    <div class="chips">
+      <span>Flujo<small>de contenidos</small></span>
+      <span>Cooperación<small>entre industrias</small></span>
+      <span>Migración<small>de audiencias</small></span>
+    </div>
+    <span class="cite">Jenkins (2006/2008, p. 14)</span>
+    <ul>
+      <li><b>Cambio cultural,</b> no un aparato: ocurre en la mente de las personas y en sus conversaciones (p. 15).</li>
+      <li><b>Cultura participativa:</b> el público deja de ser pasivo (p. 15).</li>
+      <li><b>Inteligencia colectiva:</b> «cada uno de nosotros sabe algo» (p. 15).</li>
+    </ul>
+    <div class="foot">Ejemplo: «Blas es malo», un collage casero que terminó en carteles de protesta y en CNN (pp. 13–14).</div>
+  </button>
+</section>
+
+<section class="band">
+  <div class="band-h in" style="--d:.6s"><span class="num"><i>4</i></span><h2>Impacto en la sociedad actual</h2></div>
+  <div class="cards">
+    <button class="card in" style="--d:.7s" data-k="soc">
+      <h3><svg viewBox="0 0 28 28"><circle cx="9" cy="10" r="4" fill="#0f8a74"/><circle cx="19" cy="10" r="4" fill="#c77a12"/><path d="M2 24c1-5 4-7 7-7s6 2 7 7M12 24c1-5 4-7 7-7s6 2 7 7" fill="none" stroke="#1d2b2e" stroke-width="2"/></svg>Social</h3>
+      <p>Lo aprendido en comunidades de fans pasa a la educación y la política. La brecha ya no es solo de acceso: es de participación. <span class="cite">(Jenkins, 2006/2008, pp. 15, 33)</span></p>
+    </button>
+    <button class="card in" style="--d:.8s" data-k="cul">
+      <h3><svg viewBox="0 0 28 28"><rect x="3" y="6" width="22" height="15" rx="3" fill="none" stroke="#1d2b2e" stroke-width="2"/><path d="M11 10l7 3.5-7 3.5z" fill="#c77a12"/></svg>Cultural</h3>
+      <p>El consumidor pasa a ser activo, migratorio y conectado. Ej.: una emisora comunitaria en FM, Facebook Live y WhatsApp. <span class="cite">(p. 29)</span></p>
+    </button>
+    <button class="card in" style="--d:.9s" data-k="med">
+      <h3><svg viewBox="0 0 28 28"><path d="M4 20c6 0 8-12 20-12" fill="none" stroke="#0f8a74" stroke-width="2.4"/><path d="M4 20c6 0 8 4 20 4" fill="none" stroke="#c2412d" stroke-width="2.4"/><circle cx="4" cy="20" r="3" fill="#1d2b2e"/></svg>Mediático</h3>
+      <p>Franquicias y sinergias. Producir es más barato, pero la propiedad de los medios está más concentrada. <span class="cite">(pp. 28–29)</span></p>
+    </button>
+    <button class="card crit in" style="--d:1s" data-k="cri">
+      <h3><svg viewBox="0 0 28 28"><path d="M14 3l12 21H2z" fill="none" stroke="#c2412d" stroke-width="2.2" stroke-linejoin="round"/><path d="M14 11v6" stroke="#c2412d" stroke-width="2.4"/><circle cx="14" cy="20.5" r="1.5" fill="#c2412d"/></svg>Mirada crítica</h3>
+      <p>El «ecosistema digital» también trae riesgos: control a través de los datos y fatiga informativa. <span class="cite">(Martínez Roa et al., 2025, pp. 23, 96–97)</span></p>
+    </button>
+  </div>
+</section>
+
+<footer class="in" style="--d:1.1s">
+  <span>Fuentes: Jenkins (2006/2008) · Scolari (2015) · Martínez Roa et al. (2025)</span>
+  <button data-k="refs">Referencias</button>
+</footer>
+
+<div id="ov" role="dialog" aria-modal="true" aria-labelledby="boxT">
+  <div id="box"><button id="x" aria-label="Cerrar">×</button><div id="boxC"></div></div>
+</div>
+
+</main></div>
+
+<script>
+(() => {
+const stage = document.getElementById('stage');
+const fit = () => stage.style.transform = `scale(${Math.min(innerWidth / 1600, innerHeight / 900)})`;
+addEventListener('resize', fit); fit();
+
+const J = 'Jenkins, 2006/2008', S = 'Scolari, 2015', U = 'Martínez Roa et al., 2025';
+const D = {
+  eco: { c: '#0f8a74', t: 'Ecología de los medios',
+    b: `<p>Neil Postman introdujo el término en 1968 y lo definió como «el estudio de los medios como ambientes» (${S}, pp. 18–19). La idea es que los medios no son solo canales: son el entorno en el que vivimos. McLuhan decía que nos movemos en ellos «como un pez en el agua» y que nos remodelan sin que seamos conscientes (p. 23).</p>
+        <p>Scolari distingue dos lecturas. Los medios como <b>ambientes</b>, que modelan la percepción y la cognición de quienes los usan (p. 29), y los medios como <b>especies</b>, que viven en un mismo ecosistema y se relacionan entre sí. McLuhan lo resume así: «ningún medio adquiere su significado o existencia solo, sino exclusivamente en interacción constante con otros medios» (p. 30).</p>
+        <p>Postman lo explicaba con una gota de tinta roja en un vaso de agua: no queda agua más una gota, toda el agua cambia de color. Después de la imprenta no había «Europa + imprenta», sino otra Europa (p. 24).</p>` },
+  con: { c: '#c77a12', t: 'Convergencia mediática',
+    b: `<p>Jenkins la define como «el flujo de contenido a través de múltiples plataformas mediáticas, la cooperación entre múltiples industrias mediáticas y el comportamiento migratorio de las audiencias» (${J}, p. 14).</p>
+        <p>No es un aparato que junta funciones, sino un cambio cultural: «la convergencia se produce en el cerebro de los consumidores individuales y mediante sus interacciones sociales con otros» (p. 15). Por eso habla de la falacia de la caja negra, la idea de que todo llegará por un solo aparato (p. 25).</p>
+        <p>Va unida a la <b>cultura participativa</b>, donde productores y consumidores interactúan, aunque no con el mismo poder, y a la <b>inteligencia colectiva</b>, término de Pierre Lévy: «ninguno de nosotros puede saberlo todo; cada uno de nosotros sabe algo» (p. 15). Los fans de <i>Survivor</i>, por ejemplo, usaban fotos satelitales para anticipar resultados (p. 35).</p>
+        <p><b>Caso «Blas es malo»:</b> un estudiante hizo un collage de Blas con Bin Laden como broma; un editor en Bangladesh lo imprimió en carteles, apareció en protestas en Oriente Medio y la CNN lo transmitió al mundo (pp. 13–14).</p>` },
+  art: { c: '#1d2b2e', t: '¿Cómo se relacionan los dos enfoques?',
+    b: `<p><b>1. Los medios no mueren, se reacomodan.</b> Jenkins afirma que «la televisión no mató a la radio»: lo que muere son las tecnologías de distribución, como el casete (${J}, pp. 24–25). Es la misma idea de los medios como especies que coexisten (${S}, p. 30).</p>
+        <p><b>2. El medio también es cultura.</b> Jenkins, siguiendo a Gitelman, entiende el medio como tecnología más «protocolos» o prácticas sociales (p. 24). La ecología lo estudia como un ambiente que moldea cómo pensamos (${S}, p. 29).</p>
+        <p><b>3. Mapa y movimiento.</b> La ecología muestra el ecosistema completo; la convergencia explica cómo se mueven en él los contenidos y las audiencias. Scolari incluye los «procesos de convergencia cultural» en la nueva ecología de los medios (p. 31).</p>
+        <p><b>Tensión:</b> la ecología resalta cómo los medios nos moldean; la convergencia, lo que las personas hacen con ellos: archivar, comentar, apropiarse y recircular contenidos (${J}, p. 28). Juntas explican la relación en ambos sentidos.</p>` },
+  soc: { c: '#0f8a74', t: 'Impacto social',
+    b: `<p>Las habilidades que se aprenden en comunidades de fans y jugadores (investigar, compartir, debatir) empiezan a aplicarse en la educación, el derecho y la política (${J}, pp. 15, 32).</p>
+        <p>La brecha digital cambió: en los noventa el problema era el acceso; hoy es la participación, porque no todos tienen las destrezas y los recursos para participar (p. 33). De ahí la importancia de la alfabetización digital (${U}, p. 44).</p>` },
+  cul: { c: '#c77a12', t: 'Impacto cultural',
+    b: `<p>Si antes el consumidor era pasivo, predecible, aislado y silencioso, ahora es activo, migratorio, conectado, ruidoso y público (${J}, p. 29).</p>
+        <p>La comunicación digital interactiva permite a los usuarios «no solo recibir información, sino también participar activamente en su creación y difusión» (Scolari, citado en ${U}, p. 43).</p>
+        <p>Ejemplo local: una emisora comunitaria que sale al aire por FM, transmite en vivo por Facebook y circula en audios de WhatsApp, donde la comunidad la comenta y la comparte.</p>` },
+  med: { c: '#c2412d', t: 'Impacto mediático',
+    b: `<p>Las industrias hablan de extensión, sinergia y franquicia para mover sus contenidos por distintas plataformas (${J}, p. 29).</p>
+        <p>Conviven dos tendencias opuestas: producir y distribuir es más barato que nunca, pero la propiedad de los grandes medios está cada vez más concentrada (p. 28). La convergencia va de arriba abajo, desde las empresas, y de abajo arriba, desde los consumidores.</p>` },
+  cri: { c: '#c2412d', t: 'Mirada crítica',
+    b: `<p>Jenkins reconoce que «no todos los participantes son creados iguales»: las corporaciones tienen más poder que cualquier consumidor (${J}, p. 15).</p>
+        <p>Scolari señala que la ecología de los medios aún necesita un vocabulario y métodos propios (${S}, pp. 32–33).</p>
+        <p>El libro de la UNAD advierte que la expresión «ecosistema digital» puede ocultar los riesgos de la conectividad (${U}, p. 96). Con Byung-Chul Han describe una psicopolítica que usa los datos que entregamos para predecir y condicionar la conducta (p. 23), y una fatiga causada por el exceso de información (p. 97).</p>` },
+  refs: { c: '#1d2b2e', t: 'Referencias',
+    b: `<div class="refs">
+        <p>Jenkins, H. (2008). Introducción: «Adoración en el altar de la convergencia». Un nuevo paradigma para comprender el cambio mediático. En <i>Convergence culture: La cultura de la convergencia de los medios de comunicación</i> (P. Hermida, Trad.; pp. 13–34). Paidós. <a href="https://stbngtrrz.wordpress.com/wp-content/uploads/2012/10/jenkins-henry-convergence-culture.pdf" target="_blank" rel="noopener">https://stbngtrrz.wordpress.com/wp-content/uploads/2012/10/jenkins-henry-convergence-culture.pdf</a> (Obra original publicada en 2006)</p>
+        <p>Martínez Roa, O. G., Rodríguez Saavedra, J. J., Pérez Bolaños, E. A. y Ortega Eraso, E. G. (2025). <i>Comunicación y filosofía: aproximaciones a un debate contemporáneo</i>. Sello Editorial UNAD. <a href="https://doi.org/10.22490/UNAD.9786287786974" target="_blank" rel="noopener">https://doi.org/10.22490/UNAD.9786287786974</a></p>
+        <p>Scolari, C. A. (2015). Introducción. Ecología de los medios: de la metáfora a la teoría (y más allá). En C. A. Scolari (Ed.), <i>Ecología de los medios: Entornos, evoluciones e interpretaciones</i> (pp. 15–42). Gedisa. <a href="https://repositori-api.upf.edu/api/core/bitstreams/7e91eef8-6724-48f7-8ec0-320907f569f3/content" target="_blank" rel="noopener">https://repositori-api.upf.edu/api/core/bitstreams/7e91eef8-6724-48f7-8ec0-320907f569f3/content</a></p>
+      </div>` }
+};
+
+const ov = document.getElementById('ov'), box = document.getElementById('box');
+let last = null;
+function open(k) {
+  const d = D[k];
+  box.style.borderTopColor = d.c;
+  document.getElementById('boxC').innerHTML = `<h2 id="boxT">${d.t}</h2>${d.b}`;
+  box.scrollTop = 0;
+  ov.classList.add('show');
+  document.getElementById('x').focus();
+}
+function close() { ov.classList.remove('show'); last?.focus(); }
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-k]');
+  if (t && !ov.classList.contains('show')) { last = t; open(t.dataset.k); return; }
+  if (e.target.id === 'x' || e.target === ov) close();
+});
+addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+})();
+</script>
+</body>
+</html>
